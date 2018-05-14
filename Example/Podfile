@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AZLocalization_Example' do
+  pod 'AZLocalization', :path => '../'
+
+  target 'AZLocalization_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
