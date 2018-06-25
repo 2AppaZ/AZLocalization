@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  AZLocalization
+
+  Created by Jean-François GRANG on 14/05/2018.
+  Copyright © 2018 CocoaPods. All rights reserved.
+*/
+
+"textfield_placeholder" = "Textfield placeholder";
+"textfield_text" = "Textfield text";
+"label" = "Localized Label";
+"button_default" = "default";
+"button_highlighted" = "highlighted";
+"button_selected" = "selected";
+"button_disabled" = "disabled";
+"segmented_control_one" = "One";
+"segmented_control_two" = "Two";
+"segmented_control_three" = "Three";
+"view_controller_title" = "Controller Title";

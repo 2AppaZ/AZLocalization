@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r1q-Ho-SBQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="LjL-v4-1Kw">
+            <objects>
+                <navigationController id="r1q-Ho-SBQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V3C-Ms-5fa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Wnj-XR-wjN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ig-cl-N8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="33"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -20,11 +36,220 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-Je-kSv">
+                                <rect key="frame" x="8" y="207" width="359" height="253"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFs-Dg-Z3N">
+                                        <rect key="frame" x="0.0" y="46" width="175.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="textfield_placeholder"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-VL-PXg">
+                                        <rect key="frame" x="184" y="46" width="175.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="textfield_placeholder"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="uppercasedLocalizedPlaceholder" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCI-iu-XJQ">
+                                        <rect key="frame" x="0.0" y="84" width="175.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="label"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaV-9T-SYb">
+                                        <rect key="frame" x="184" y="84" width="175.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="label"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="uppercasedText" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otg-5a-pKS">
+                                        <rect key="frame" x="0.0" y="113" width="114.5" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="highlightedLocalizedTitle" value="button_highlighted"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedLocalizedTitle" value="button_selected"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledLocalizedTitle" value="button_disabled"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultLocalizedTitle" value="button_default"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juS-pW-714">
+                                        <rect key="frame" x="244.5" y="113" width="114.5" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="highlightedLocalizedTitle" value="button_highlighted"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedLocalizedTitle" value="button_selected"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledLocalizedTitle" value="button_disabled"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultLocalizedTitle" value="button_default"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-01-k3S">
+                                        <rect key="frame" x="122.5" y="113" width="114" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="highlightedLocalizedTitle" value="button_highlighted"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedLocalizedTitle" value="button_selected"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledLocalizedTitle" value="button_disabled"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultLocalizedTitle" value="button_default"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-Ly-YGh">
+                                        <rect key="frame" x="0.0" y="151" width="114.5" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="highlightedLocalizedTitle" value="button_highlighted"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedLocalizedTitle" value="button_selected"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledLocalizedTitle" value="button_disabled"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultLocalizedTitle" value="button_default"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="uppercasedTitles" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJw-Xj-iuC">
+                                        <rect key="frame" x="244.5" y="151" width="114.5" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="highlightedLocalizedTitle" value="button_highlighted"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedLocalizedTitle" value="button_selected"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledLocalizedTitle" value="button_disabled"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultLocalizedTitle" value="button_default"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="uppercasedTitles" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsz-2r-WFN">
+                                        <rect key="frame" x="122.5" y="151" width="114" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="highlightedLocalizedTitle" value="button_highlighted"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedLocalizedTitle" value="button_selected"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledLocalizedTitle" value="button_disabled"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultLocalizedTitle" value="button_default"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="uppercasedTitles" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gWW-qs-vPW">
+                                        <rect key="frame" x="0.0" y="189" width="359" height="29"/>
+                                        <segments>
+                                            <segment title="segmented_control_one"/>
+                                            <segment title="segmented_control_two"/>
+                                            <segment title="segmented_control_three"/>
+                                        </segments>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="localized" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-OX-ofG">
+                                        <rect key="frame" x="0.0" y="225" width="359" height="29"/>
+                                        <segments>
+                                            <segment title="segmented_control_one"/>
+                                            <segment title="segmented_control_two"/>
+                                            <segment title="segmented_control_three"/>
+                                        </segments>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="localized" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="uppercasedTitles" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </segmentedControl>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaS-pc-HBb">
+                                        <rect key="frame" x="0.0" y="8" width="175.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="textfield_text"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4D-2r-8ev">
+                                        <rect key="frame" x="184" y="8" width="175" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="textfield_text"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="uppercasedLocalizedText" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="juS-pW-714" firstAttribute="leading" secondItem="iSU-01-k3S" secondAttribute="trailing" constant="8" id="0jL-5K-Nmb"/>
+                                    <constraint firstItem="VaS-pc-HBb" firstAttribute="top" secondItem="gfp-Je-kSv" secondAttribute="top" constant="8" id="103-4g-R87"/>
+                                    <constraint firstItem="dCI-iu-XJQ" firstAttribute="leading" secondItem="gfp-Je-kSv" secondAttribute="leading" id="1zS-hH-VqF"/>
+                                    <constraint firstItem="iSU-01-k3S" firstAttribute="top" secondItem="otg-5a-pKS" secondAttribute="top" id="2WT-kY-Paa"/>
+                                    <constraint firstItem="cj1-OX-ofG" firstAttribute="leading" secondItem="gfp-Je-kSv" secondAttribute="leading" id="2fO-Pj-A2V"/>
+                                    <constraint firstAttribute="trailing" secondItem="g4D-2r-8ev" secondAttribute="trailing" id="7n1-e9-2fl"/>
+                                    <constraint firstItem="rsz-2r-WFN" firstAttribute="top" secondItem="iSU-01-k3S" secondAttribute="bottom" constant="8" id="8lh-ob-PiB"/>
+                                    <constraint firstItem="otg-5a-pKS" firstAttribute="top" secondItem="dCI-iu-XJQ" secondAttribute="bottom" constant="8" id="DsD-6V-Qyc"/>
+                                    <constraint firstItem="1Qg-VL-PXg" firstAttribute="width" secondItem="dFs-Dg-Z3N" secondAttribute="width" id="EFx-xf-lof"/>
+                                    <constraint firstItem="s5g-Ly-YGh" firstAttribute="leading" secondItem="gfp-Je-kSv" secondAttribute="leading" id="Eai-zb-ZHs"/>
+                                    <constraint firstItem="xJw-Xj-iuC" firstAttribute="top" secondItem="s5g-Ly-YGh" secondAttribute="top" id="F4x-kl-pmX"/>
+                                    <constraint firstItem="iSU-01-k3S" firstAttribute="width" secondItem="otg-5a-pKS" secondAttribute="width" id="FdY-Qy-9Gm"/>
+                                    <constraint firstItem="g4D-2r-8ev" firstAttribute="leading" secondItem="VaS-pc-HBb" secondAttribute="trailing" constant="8" id="GEX-Lp-r5z"/>
+                                    <constraint firstItem="xJw-Xj-iuC" firstAttribute="top" secondItem="juS-pW-714" secondAttribute="bottom" constant="8" id="IIs-hs-2RA"/>
+                                    <constraint firstItem="1Qg-VL-PXg" firstAttribute="leading" secondItem="dFs-Dg-Z3N" secondAttribute="trailing" constant="8" id="L6M-Lh-2T0"/>
+                                    <constraint firstAttribute="trailing" secondItem="gWW-qs-vPW" secondAttribute="trailing" id="LYC-91-OgK"/>
+                                    <constraint firstItem="g4D-2r-8ev" firstAttribute="width" secondItem="VaS-pc-HBb" secondAttribute="width" id="MOs-2y-Pgs"/>
+                                    <constraint firstItem="g4D-2r-8ev" firstAttribute="top" secondItem="gfp-Je-kSv" secondAttribute="top" constant="8" id="Mqt-sL-9BG"/>
+                                    <constraint firstItem="1Qg-VL-PXg" firstAttribute="top" secondItem="g4D-2r-8ev" secondAttribute="bottom" constant="8" id="Mve-r9-CRh"/>
+                                    <constraint firstAttribute="trailing" secondItem="juS-pW-714" secondAttribute="trailing" id="Raa-oo-CpM"/>
+                                    <constraint firstAttribute="trailing" secondItem="uaV-9T-SYb" secondAttribute="trailing" id="UJy-5b-Q10"/>
+                                    <constraint firstItem="uaV-9T-SYb" firstAttribute="width" secondItem="dCI-iu-XJQ" secondAttribute="width" id="Wb9-ca-PMO"/>
+                                    <constraint firstItem="uaV-9T-SYb" firstAttribute="leading" secondItem="dCI-iu-XJQ" secondAttribute="trailing" constant="8" id="Zne-lV-vs4"/>
+                                    <constraint firstItem="rsz-2r-WFN" firstAttribute="width" secondItem="s5g-Ly-YGh" secondAttribute="width" id="aKm-KK-RL7"/>
+                                    <constraint firstItem="otg-5a-pKS" firstAttribute="leading" secondItem="gfp-Je-kSv" secondAttribute="leading" id="bpQ-H5-Xhv"/>
+                                    <constraint firstItem="xJw-Xj-iuC" firstAttribute="width" secondItem="s5g-Ly-YGh" secondAttribute="width" id="cPu-iW-0RG"/>
+                                    <constraint firstItem="xJw-Xj-iuC" firstAttribute="leading" secondItem="rsz-2r-WFN" secondAttribute="trailing" constant="8" id="dFI-77-X8u"/>
+                                    <constraint firstAttribute="trailing" secondItem="cj1-OX-ofG" secondAttribute="trailing" id="dta-3d-vFv"/>
+                                    <constraint firstAttribute="bottom" secondItem="cj1-OX-ofG" secondAttribute="bottom" id="f7A-TV-kwh"/>
+                                    <constraint firstItem="dCI-iu-XJQ" firstAttribute="top" secondItem="1Qg-VL-PXg" secondAttribute="bottom" constant="8" id="hq0-gf-j48"/>
+                                    <constraint firstItem="s5g-Ly-YGh" firstAttribute="top" secondItem="otg-5a-pKS" secondAttribute="bottom" constant="8" id="j2S-iD-c9U"/>
+                                    <constraint firstItem="iSU-01-k3S" firstAttribute="leading" secondItem="otg-5a-pKS" secondAttribute="trailing" constant="8" id="k6d-2H-7hd"/>
+                                    <constraint firstItem="gWW-qs-vPW" firstAttribute="top" secondItem="rsz-2r-WFN" secondAttribute="bottom" constant="8" id="maf-Gp-7aC"/>
+                                    <constraint firstItem="cj1-OX-ofG" firstAttribute="top" secondItem="gWW-qs-vPW" secondAttribute="bottom" constant="8" id="mh1-ev-Ffh"/>
+                                    <constraint firstItem="juS-pW-714" firstAttribute="width" secondItem="otg-5a-pKS" secondAttribute="width" id="oCl-lm-6dP"/>
+                                    <constraint firstItem="uaV-9T-SYb" firstAttribute="top" secondItem="1Qg-VL-PXg" secondAttribute="bottom" constant="8" id="ofR-4X-bpj"/>
+                                    <constraint firstItem="gWW-qs-vPW" firstAttribute="leading" secondItem="gfp-Je-kSv" secondAttribute="leading" id="p5T-g9-1Sm"/>
+                                    <constraint firstItem="juS-pW-714" firstAttribute="top" secondItem="otg-5a-pKS" secondAttribute="top" id="qfV-U5-Qcn"/>
+                                    <constraint firstItem="rsz-2r-WFN" firstAttribute="leading" secondItem="s5g-Ly-YGh" secondAttribute="trailing" constant="8" id="tDy-7u-pQo"/>
+                                    <constraint firstItem="dFs-Dg-Z3N" firstAttribute="leading" secondItem="gfp-Je-kSv" secondAttribute="leading" id="v8W-Pi-I0a"/>
+                                    <constraint firstAttribute="trailing" secondItem="xJw-Xj-iuC" secondAttribute="trailing" id="wxr-Fi-tcW"/>
+                                    <constraint firstItem="VaS-pc-HBb" firstAttribute="leading" secondItem="gfp-Je-kSv" secondAttribute="leading" id="xCM-mE-sDm"/>
+                                    <constraint firstItem="rsz-2r-WFN" firstAttribute="top" secondItem="s5g-Ly-YGh" secondAttribute="top" id="xd2-fg-hxD"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Qg-VL-PXg" secondAttribute="trailing" id="ycg-fG-Y3g"/>
+                                    <constraint firstItem="dFs-Dg-Z3N" firstAttribute="top" secondItem="VaS-pc-HBb" secondAttribute="bottom" constant="8" id="zfh-nS-Gyl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gfp-Je-kSv" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="7HL-yq-yly"/>
+                            <constraint firstAttribute="trailing" secondItem="gfp-Je-kSv" secondAttribute="trailing" constant="8" id="dsN-X3-RhU"/>
+                            <constraint firstItem="gfp-Je-kSv" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="m0v-51-cqj"/>
+                            <constraint firstItem="gfp-Je-kSv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="srR-Nc-siX"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="r5y-v9-BLw"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="view_controller_title"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="45.600000000000001" y="32.833583208395808"/>
         </scene>
     </scenes>
 </document>
