@@ -47,7 +47,7 @@ extension UIButton {
 		get { return false }
 		set {
 			if newValue {
-				[UIControlState.normal, .highlighted, .selected, .disabled].forEach({
+				[UIControl.State.normal, .highlighted, .selected, .disabled].forEach({
 					let lowerCase = title(for: $0)
 					setTitle(lowerCase?.uppercased(), for: $0)
 				})
