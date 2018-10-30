@@ -14,4 +14,12 @@ extension UIViewController {
 		}
 	}
 
+	@IBInspectable var uppercasedText: Bool {
+		get { return false }
+		set {
+			if newValue {
+				title = title?.uppercased()
+			}
+		}
+	}
 }
