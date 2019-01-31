@@ -164,11 +164,6 @@ function generateLanguageAndroid() {
             #Escape quote " with '"'
             echo $'\t'"<string name="'"'$KEY'"'">$VALUE</string>" >> $FILE
         fi
-        
-#          if [ $COUNTER -gt 2 ]
-#          then
-#               break
-#          fi
 
         let "COUNTER = ${COUNTER} + 1"
     done
