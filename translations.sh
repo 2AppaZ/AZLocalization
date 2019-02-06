@@ -1,5 +1,5 @@
 #!/bin/bash
-#Call with "sh translations.sh IOS" or "sh translations.sh ANDROID"
+#Call with "bash translations.sh IOS" or "bash translations.sh ANDROID"
 
 FOLDER_IOS='Resources'
 FOLDER_ANDROID='app/src/main/res'
