@@ -105,70 +105,67 @@ function generateLanguage() {
 
 function generateLanguageAndroid() {
     let "TMP_FIELD = $1 + $COLUMN_OFFSET"
-    
-    if [ $2 = 'en' ]
+
+    if [[ $2 = 'en' ]]
     then
         FOLDER_NAME=''
     else
         FOLDER_NAME="-$2"
     fi
-    
-    FOLDER=$FOLDER_ANDROID'/values'$FOLDER_NAME
-    if [ ! -d "$FOLDER" ]; then
-        mkdir $FOLDER
+
+    FOLDER=${FOLDER_ANDROID}'/values'${FOLDER_NAME}
+    if [[ ! -d "$FOLDER" ]]; then
+        mkdir ${FOLDER}
         echo "Create $FOLDER"
     fi
 
-    FILE=$FOLDER'/strings.xml'
-    
+    FILE=${FOLDER}'/strings.xml'
+
     echo "Update $FILE"
 
-    echo "<resources>" > $FILE
+    echo "<resources>" > ${FILE}
 
     declare -a TRADS
-    
+
     COUNTER=0
     for LINE in ${EXPORT}
     do
-        if [ $COUNTER -ge $LINE_OFFSET ]
+        if [[ $COUNTER -ge ${LINE_OFFSET} ]]
         then
-   
             KEY=`echo ${LINE} | cut -d $'\t' -f 1`
             SCREEN=`echo ${LINE} | cut -d $'\t' -f 2`
             COMMENT=`echo ${LINE} | cut -d $'\t' -f 3`
             VALUE=`echo ${LINE} | cut -d $'\t' -f ${TMP_FIELD} | tr -d '\r'`
-            
+
             #Set ID_LINE_NUMBER for all empty strings
-            if [ -z "${VALUE-}" ]
+            if [[ -z "${VALUE-}" ]]
             then
                 VALUE="ID_$COUNTER"
             fi
-            
+
             #Escape ' with \'
             VALUE=${VALUE//"'"/"\'"}
-            
+
             #Convert iOS strings variable to android
             VALUE=${VALUE//'%1$@'/'%1$s'}
             VALUE=${VALUE//'%2$@'/'%2$s'}
             VALUE=${VALUE//'%3$@'/'%3$s'}
-            VALUE=${VALUE//'%@'/'%1$s'}
-            VALUE=${VALUE//'%@'/'%2$s'}
-            VALUE=${VALUE//'%@'/'%3$s'}
-            VALUE=${VALUE//'%@'/'%4$s'}
-            VALUE=${VALUE//'%@'/'%5$s'}
-            VALUE=${VALUE//'%@'/'%6$s'}
-            VALUE=${VALUE//'%@'/'%7$s'}
-            VALUE=${VALUE//'%@'/'%8$s'}
-            VALUE=${VALUE//'%@'/'%9$s'}
-            
+            VALUE=${VALUE//'%@'/'%s'}
+            VALUE=${VALUE//'&'/'&amp;'}
+            VALUE=${VALUE//'<'/'&lt;'}
+            VALUE=${VALUE//'>'/'&gt;'}
+
+            #rename dot in key to underscore like : alert.confirm.pin ==> alert_confirm_pin
+            KEY=${KEY//"."/"_"}
+
             #Escape quote " with '"'
-            echo $'\t'"<string name="'"'$KEY'"'">$VALUE</string>" >> $FILE
+            echo $'\t'"<string name="'"'${KEY}'"'">$VALUE</string>" >> ${FILE}
         fi
 
         let "COUNTER = ${COUNTER} + 1"
     done
-    
-    echo "</resources>" >> $FILE
+
+    echo "</resources>" >> ${FILE}
 }
 
 getAllLanguages $1
