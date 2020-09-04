@@ -18,26 +18,19 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  Localizing apps can be a pain in the apps. You need to bind labels, set the locale in the apppropriate function … and this in hundreds of labels that are only displaying static placeholder text.
+  This pod eases Localization of apps by adding @IBInspectable attributes to UIKit components.
+  DESC
 
   s.homepage         = 'https://github.com/jfgrang/AZLocalization'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jfgrang' => 'jfgrang@2appaz.com' }
   s.source           = { :git => 'https://github.com/jfgrang/AZLocalization.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/2appaz'
 
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = "10.0"
 
   s.source_files = 'AZLocalization/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'AZLocalization' => ['AZLocalization/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
